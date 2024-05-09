@@ -1,0 +1,8 @@
+{
+    "status":200,
+    "apps_data":[
+        {
+            "app1":"test_app"
+        }
+    ]
+}
