@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: TICKSOW
+  description: |
+    API for WebTraffic.Exchange platform
+
+    **Basic Auth Credentials:**
+    - **Username:** badmin
+    - **Password:** bpass@213
+  version: 1.0.0
+
+servers:
+
+  - url: http://127.0.0.1:8080/v3
+    description: Localhost
+  - url: http://localhost:8080/v3
+    description: Localhost
+  
+paths:
+
+  /check-update/{platform}:
+    $ref: './paths/users/register.yaml'

@@ -1,0 +1,132 @@
+get:
+  tags:
+    - system
+  operationId: check-update
+  security:
+    - basicAuth: []
+  summary: Check if an update is available for a platform
+  description: |
+    Shows the latest version details. 
+
+    ### Logic
+    1. Get `platform` from request
+
+    2. Hard code the data as PHP array and display according to the `platform`
+  parameters:
+    - name: platform
+      in: path
+      required: true
+      description: platform
+      schema:
+        type: string
+        description: The platform to check for updates (e.g., 'android', 'ios', 'web')
+        enum:
+          - android
+          - ios
+          - windows
+          - linux
+          - macos
+          - all
+        example: all
+  responses:
+    200:
+      description: Update data
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                example: true
+              message:
+                type: string
+                example: "Update data"
+              description:
+                type: string
+                example: "No errors"
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    app_id:
+                      type: string
+                      example: "com.letsdosimple.WebTrafficBot"
+                    name:
+                      type: string
+                      example: "Web Traffic Bot"
+                    description:
+                      type: string
+                      example: "Generate more traffic into your blog/website"
+                    logo:
+                      type: string
+                      format: uri
+                      example: "https://letsdosimple.com/wp-content/uploads/2023/11/web-raffic-bot-logo.webp"
+                    download_data:
+                      type: object
+                      properties:
+                        android:
+                          type: object
+                          properties:
+                            platform:
+                              type: string
+                              example: "android"
+                            app_version:
+                              type: string
+                              example: "1.3.8"
+                            update_type:
+                              type: string
+                              example: "normal"
+                            download_links:
+                              type: string
+                              format: uri
+                              example: "https://play.google.com/store/apps/details?id=com.letsdosimple.WebTrafficBot"
+                        ios:
+                          type: object
+                          properties:
+                            platform:
+                              type: string
+                              example: "ios"
+                            app_version:
+                              type: string
+                              example: "1.3.8"
+                            update_type:
+                              type: string
+                              example: "normal"
+                            download_links:
+                              type: string
+                              format: uri
+                              example: "https://play.google.com/store/apps/details?id=com.letsdosimple.WebTrafficBot"
+                        windows:
+                          type: object
+                          properties:
+                            platform:
+                              type: string
+                              example: "windows"
+                            app_version:
+                              type: string
+                              example: "1.3.8"
+                            update_type:
+                              type: string
+                              example: "normal"
+                            download_links:
+                              type: string
+                              format: uri
+                              example: "https://play.google.com/store/apps/details?id=com.letsdosimple.WebTrafficBot"
+    400:
+      description: Bad request - Missing required parameters or invalid platform
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                example: false
+              message:
+                type: string
+                example: "Missing required parameters or invalid platform"
+              description:
+                type: string
+                example: "Error details with description"
