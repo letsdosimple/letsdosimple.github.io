@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: TICKSOW
   description: |
-    API for WebTraffic.Exchange platform
+    API for TICKSOW Quiz Project
 
     **Basic Auth Credentials:**
     - **Username:** badmin
