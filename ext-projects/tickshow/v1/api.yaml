@@ -18,5 +18,67 @@ servers:
   
 paths:
 
-  /check-update/{platform}:
+  /register:
     $ref: './paths/users/register.yaml'
+  
+  /resend-email-otp:
+    $ref: './paths/users/register.yaml'
+  
+  /verify-email:
+    $ref: './paths/users/register.yaml'
+  
+  /login:
+    $ref: './paths/users/register.yaml'
+  
+  /dashboard:
+    $ref: './paths/users/register.yaml'
+  
+  /view-game-info/{gameId}:
+    $ref: './paths/users/register.yaml'
+  
+  /game/{gameId}:
+    $ref: './paths/users/register.yaml'
+  
+  /game-question/{gameId}/:
+    $ref: './paths/users/register.yaml'
+  
+  /game-answer: #gameId, gameQuestionId, gameAnswerId
+    $ref: './paths/users/register.yaml'
+  
+  /leaderboard/{gameId}/:
+    $ref: './paths/users/register.yaml'
+  
+  /leaderboard:
+    $ref: './paths/users/register.yaml'
+  
+  /wallet:
+    $ref: './paths/users/register.yaml'
+  
+  /wallet-transactions/{pageNum}/{listPerPage}:
+    $ref: './paths/users/register.yaml'
+  
+  /wallet-topup:
+    $ref: './paths/users/register.yaml'
+  
+  /wallet-withdraw:
+    $ref: './paths/users/register.yaml'
+  
+  /view-profile:
+    $ref: './paths/users/register.yaml'
+  
+  /edit-profile:
+    $ref: './paths/users/register.yaml'
+  
+  /logout:
+    $ref: './paths/users/register.yaml'
+  
+  /customer-service:
+    $ref: './paths/users/register.yaml'
+  
+  /customer-service-messages/{pageNum}/{listPerPage}:
+    $ref: './paths/users/register.yaml'
+
+  
+
+  
+
