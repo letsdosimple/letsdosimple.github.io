@@ -1,0 +1,39 @@
+get:
+  tags:
+    - users
+  summary: Logout user
+  description: Logs out the authenticated user by invalidating their session token.
+  operationId: logout
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Logout successful.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "Logout success"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

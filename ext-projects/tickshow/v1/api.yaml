@@ -22,63 +22,71 @@ paths:
     $ref: './paths/users/register.yaml'
   
   /resend-email-otp:
-    $ref: './paths/users/register.yaml'
+    $ref: './paths/users/resend-email-otp.yaml'
   
   /verify-email:
-    $ref: './paths/users/register.yaml'
+    $ref: './paths/users/verify-email.yaml'
   
   /login:
-    $ref: './paths/users/register.yaml'
-  
-  /dashboard:
-    $ref: './paths/users/register.yaml'
-  
-  /view-game-info/{gameId}:
-    $ref: './paths/users/register.yaml'
-  
-  /game/{gameId}:
-    $ref: './paths/users/register.yaml'
-  
-  /game-question/{gameId}/:
-    $ref: './paths/users/register.yaml'
-  
-  /game-answer: #gameId, gameQuestionId, gameAnswerId
-    $ref: './paths/users/register.yaml'
-  
-  /leaderboard/{gameId}/:
-    $ref: './paths/users/register.yaml'
-  
-  /leaderboard:
-    $ref: './paths/users/register.yaml'
-  
-  /wallet:
-    $ref: './paths/users/register.yaml'
-  
-  /wallet-transactions/{pageNum}/{listPerPage}:
-    $ref: './paths/users/register.yaml'
-  
-  /wallet-topup:
-    $ref: './paths/users/register.yaml'
-  
-  /wallet-withdraw:
-    $ref: './paths/users/register.yaml'
-  
-  /view-profile:
-    $ref: './paths/users/register.yaml'
-  
-  /edit-profile:
-    $ref: './paths/users/register.yaml'
+    $ref: './paths/users/login.yaml'
   
   /logout:
-    $ref: './paths/users/register.yaml'
+    $ref: './paths/users/logout.yaml'
+  
+  /dashboard:
+    $ref: './paths/users/dashboard.yaml'
+  
+  /view-game-info/{gameId}:
+    $ref: './paths/game/view-game-info.yaml'
+  
+  /game-question/{gameId}/:
+    $ref: './paths/game/game-question.yaml'
+  
+  /game-answer:
+    $ref: './paths/game/game-answer.yaml'
+  
+  /leaderboard:
+    $ref: './paths/game/register.yaml'
+  
+  /wallet:
+    $ref: './paths/wallet/wallet.yaml'
+  
+  /wallet-transactions/{pageNum}/{listPerPage}:
+    $ref: './paths/wallet/wallet-transactions.yaml'
+  
+  /wallet-topup:
+    $ref: './paths/wallet/wallet-topup.yaml'
+  
+  /wallet-withdraw:
+    $ref: './paths/wallet/wallet-withdraw.yaml'
+  
+  /view-profile:
+    $ref: './paths/profile/view-profile.yaml'
+  
+  /edit-profile:
+    $ref: './paths/profile/edit-profile.yaml'
+  
+  /delete-profile:
+    $ref: './paths/profile/delete-profile.yaml'
   
   /customer-service:
-    $ref: './paths/users/register.yaml'
+    $ref: './paths/customer-service/customer-service.yaml'
   
   /customer-service-messages/{pageNum}/{listPerPage}:
-    $ref: './paths/users/register.yaml'
-
+    $ref: './paths/customer-service/customer-service-messages.yaml'
   
+  /customer-service-message:
+    $ref: './paths/customer-service/customer-service-message.yaml'
 
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   
 

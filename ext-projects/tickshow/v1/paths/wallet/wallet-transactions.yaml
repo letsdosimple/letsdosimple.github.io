@@ -1,0 +1,91 @@
+get:
+  tags:
+    - wallet
+  summary: Fetch wallet transactions
+  description: Retrieves a list of wallet transactions, including top-ups and withdrawals, with pagination.
+  operationId: wallet-transactions
+  security:
+    - bearerAuth: []
+  parameters:
+    - name: pageNum
+      in: path
+      required: true
+      description: Page number for pagination.
+      schema:
+        type: integer
+        example: 1
+    - name: listPerPage
+      in: path
+      required: true
+      description: Number of transactions to fetch per page.
+      schema:
+        type: integer
+        example: 10
+  responses:
+    '200':
+      description: Wallet transactions fetched successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "Otp sent to email"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+              transactions:
+                type: array
+                description: List of wallet transactions.
+                items:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+                      description: Message for admin if needed for display.
+                      example: "Transaction rejected due to insufficient funds"
+                    type:
+                      type: string
+                      enum: [topup, withdraw]
+                      description: Type of the transaction.
+                      example: "topup"
+                    time:
+                      type: string
+                      format: date-time
+                      description: The time when the transaction occurred.
+                      example: "2024-12-09T14:30:00Z"
+                    status:
+                      type: string
+                      description: Status of the transaction.
+                      example: "Completed"
+                    price:
+                      type: number
+                      format: float
+                      description: Amount involved in the transaction.
+                      example: 50.00
+                    transaction_id:
+                      type: string
+                      description: Unique identifier for the transaction.
+                      example: "TXN123456789"
+                    description:
+                      type: string
+                      description: Additional information about the transaction.
+                      example: "Added funds for game credits"
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

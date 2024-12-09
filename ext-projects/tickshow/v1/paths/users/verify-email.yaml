@@ -1,9 +1,9 @@
 post:
   tags:
     - users
-  summary: Register a new user
-  description: Registers a new user and sends an OTP to their email address.
-  operationId: register
+  summary: Verify email OTP
+  description: Verifies the email OTP provided by the user.
+  operationId: verify-email
   security:
     - basicAuth: []
   requestBody:
@@ -13,25 +13,20 @@ post:
         schema:
           type: object
           required:
-            - full_name
-            - email_address
-            - mobile_number
+            - otp_id
+            - otp
           properties:
-            full_name:
-              type: string
-              description: Full name of the user.
-              example: John Doe
-            email_address:
-              type: string
-              description: Email address of the user.
-              example: johndoe@example.com
-            mobile_number:
-              type: string
-              description: Mobile number of the user.
-              example: "9876543210"
+            otp_id:
+              type: integer
+              description: The ID of the OTP to verify.
+              example: 12345
+            otp:
+              type: integer
+              description: The OTP value to verify.
+              example: 678901
   responses:
     '200':
-      description: OTP sent successfully.
+      description: Email verified successfully.
       content:
         application/json:
           schema:
@@ -40,7 +35,7 @@ post:
               message:
                 type: string
                 description: Confirmation message.
-                example: "Otp sent to email"
+                example: "Verification success"
               status:
                 type: string
                 description: Status of the request.
@@ -49,10 +44,10 @@ post:
                 type: string
                 description: Additional information.
                 example: "no errors"
-              otp_id:
-                type: integer
-                description: OTP ID generated for the user.
-                example: 12345
+              login_token:
+                type: string
+                description: Token generated after successful verification.
+                example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
     '400':
       description: Bad Request - Validation errors.
       content:
@@ -63,7 +58,7 @@ post:
               message:
                 type: string
                 description: Error message.
-                example: "Invalid input data."
+                example: "Invalid OTP or OTP ID."
     '401':
       description: Unauthorized - Invalid or missing credentials.
       content:

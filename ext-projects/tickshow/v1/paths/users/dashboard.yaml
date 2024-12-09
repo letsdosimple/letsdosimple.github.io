@@ -1,0 +1,89 @@
+get:
+  tags:
+    - users
+  summary: User dashboard
+  description: Fetches user dashboard details, including account status, profile information, wallet balance, and live games list.
+  operationId: dashboard
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Dashboard details retrieved successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "Welcome to dashboard"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+              account_status:
+                type: string
+                enum: [active, suspended, blocked]
+                description: Current account status of the user.
+                example: "active"
+              profile_image:
+                type: string
+                format: uri
+                description: URL of the user's profile image (Gravatar-based).
+                example: "https://www.gravatar.com/avatar/hashedemail"
+              full_name:
+                type: string
+                description: Full name of the user.
+                example: "John Doe"
+              wallet_balance:
+                type: number
+                format: float
+                description: Current wallet balance of the user.
+                example: 150.75
+              live_game_list:
+                type: array
+                description: List of live games available for the user.
+                items:
+                  type: object
+                  properties:
+                    game_id:
+                      type: integer
+                      description: Unique identifier for the game.
+                      example: 123
+                    game_name:
+                      type: string
+                      description: Name of the game.
+                      example: "Chess Blitz"
+                    game_state:
+                      type: string
+                      description: Current state of the game.
+                      example: "active"
+                    game_state_message:
+                      type: string
+                      description: Detailed message about the game state.
+                      example: "Game is currently in progress"
+                    game_price:
+                      type: number
+                      format: float
+                      description: Price of the game.
+                      example: 10.50
+                    game_status:
+                      type: string
+                      description: Overall status of the game.
+                      example: "available"
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

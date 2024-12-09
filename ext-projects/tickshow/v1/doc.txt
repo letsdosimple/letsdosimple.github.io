@@ -1,0 +1,183 @@
+API Dev Doc
+/register
+method: post 
+Auth : basic-auth 
+tags: users
+operationId: register
+
+Request:
+full_name 
+email_address 
+mobile_number
+
+Response:
+message: Otp sent to email
+status: success
+description: no errors
+otp_id
+
+generate swagger for this
+
+
+/resend-email-otp:
+method: post 
+Auth : basic-auth 
+tags: users
+operationId: resend-email-otp
+
+Request:
+otp_id
+
+Response:
+message: Otp resent sent to email
+status: success
+description: no errors
+otp_id
+
+generate swagger for this
+  
+ 
+/verify-email:
+method: post 
+Auth : basic-auth 
+tags: users
+operationId: resend-email-otp
+
+Request:
+otp_id
+otp
+
+Response:
+message: Verification success
+status: success
+description: no errors
+login_token
+
+generate swagger for this
+  
+/login:
+method: post 
+Auth : basic-auth 
+tags: users
+operationId: resend-email-otp
+
+Request:
+email_address
+
+Response:
+message: Otp sent to email
+status: success
+description: no errors
+otp_id
+
+generate swagger for this
+  
+/dashboard:
+method: get 
+Auth : bearer-auth 
+tags: users
+operationId: resend-email-otp
+
+Request:
+
+Response:
+message: Welcome to dashboard
+status: success
+description: no errors
+Account_status : active/ suspended/blocked
+profile_image (use gravathar)
+full_name
+wallet_balance
+live_game_list :[
+	{
+	“game_id”:
+	“game_name”:
+	“game_state”:
+	“game_state_message”
+	“game_price”
+}
+]
+
+
+generate swagger for this
+  
+/view-game-info/{gameId}:
+message: game info fetched success
+status: success
+description: no errors
+attempt_count : active/ suspended/blocked
+profile_image (use gravathar)
+full_name
+wallet_balance
+live_game_list :[
+	{
+	“game_id”:
+	“game_name”:
+	“game_state”:
+	“game_state_message”
+	“game_price”
+}
+]
+  
+  /game/{gameId}:
+    $ref: './paths/users/register.yaml'
+  
+  /game-question/{gameId}/:
+    $ref: './paths/users/register.yaml'
+  
+  /game-answer: #gameId, gameQuestionId, gameAnswerId
+    $ref: './paths/users/register.yaml'
+  
+  /leaderboard:
+    $ref: './paths/users/register.yaml'
+  
+  /wallet:
+    $ref: './paths/users/register.yaml'
+  
+  /wallet-transactions/{pageNum}/{listPerPage}:
+    $ref: './paths/users/register.yaml'
+  
+  /wallet-topup:
+    $ref: './paths/users/register.yaml'
+  
+  /wallet-withdraw:
+    $ref: './paths/users/register.yaml'
+  
+  /view-profile:
+    $ref: './paths/users/register.yaml'
+  
+  /edit-profile:
+    $ref: './paths/users/register.yaml'
+  
+  /logout:
+    $ref: './paths/users/register.yaml'
+  
+  /customer-service:
+    $ref: './paths/users/register.yaml'
+  
+  /customer-service-messages/{pageNum}/{listPerPage}:
+    $ref: './paths/users/register.yaml'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

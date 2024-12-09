@@ -1,9 +1,9 @@
 post:
   tags:
     - users
-  summary: Register a new user
-  description: Registers a new user and sends an OTP to their email address.
-  operationId: register
+  summary: Resend email OTP
+  description: Resends an OTP to the user's email address using the OTP ID.
+  operationId: resend-email-otp
   security:
     - basicAuth: []
   requestBody:
@@ -13,25 +13,15 @@ post:
         schema:
           type: object
           required:
-            - full_name
-            - email_address
-            - mobile_number
+            - otp_id
           properties:
-            full_name:
-              type: string
-              description: Full name of the user.
-              example: John Doe
-            email_address:
-              type: string
-              description: Email address of the user.
-              example: johndoe@example.com
-            mobile_number:
-              type: string
-              description: Mobile number of the user.
-              example: "9876543210"
+            otp_id:
+              type: integer
+              description: The ID of the OTP to resend.
+              example: 12345
   responses:
     '200':
-      description: OTP sent successfully.
+      description: OTP resent successfully.
       content:
         application/json:
           schema:
@@ -40,7 +30,7 @@ post:
               message:
                 type: string
                 description: Confirmation message.
-                example: "Otp sent to email"
+                example: "Otp resent sent to email"
               status:
                 type: string
                 description: Status of the request.
@@ -51,7 +41,7 @@ post:
                 example: "no errors"
               otp_id:
                 type: integer
-                description: OTP ID generated for the user.
+                description: The OTP ID for the resent OTP.
                 example: 12345
     '400':
       description: Bad Request - Validation errors.

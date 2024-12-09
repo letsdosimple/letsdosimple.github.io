@@ -1,0 +1,39 @@
+delete:
+  tags:
+    - profile
+  summary: Delete user profile
+  description: Deletes the user's profile.
+  operationId: delete-profile
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Profile deleted successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "Profile deleted successfully"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

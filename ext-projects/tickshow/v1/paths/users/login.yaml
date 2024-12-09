@@ -1,9 +1,9 @@
 post:
   tags:
     - users
-  summary: Register a new user
-  description: Registers a new user and sends an OTP to their email address.
-  operationId: register
+  summary: Login user
+  description: Initiates the login process by sending an OTP to the user's email address.
+  operationId: login
   security:
     - basicAuth: []
   requestBody:
@@ -13,22 +13,12 @@ post:
         schema:
           type: object
           required:
-            - full_name
             - email_address
-            - mobile_number
           properties:
-            full_name:
-              type: string
-              description: Full name of the user.
-              example: John Doe
             email_address:
               type: string
-              description: Email address of the user.
+              description: The email address of the user.
               example: johndoe@example.com
-            mobile_number:
-              type: string
-              description: Mobile number of the user.
-              example: "9876543210"
   responses:
     '200':
       description: OTP sent successfully.
@@ -51,7 +41,7 @@ post:
                 example: "no errors"
               otp_id:
                 type: integer
-                description: OTP ID generated for the user.
+                description: The ID of the OTP generated.
                 example: 12345
     '400':
       description: Bad Request - Validation errors.
@@ -63,7 +53,7 @@ post:
               message:
                 type: string
                 description: Error message.
-                example: "Invalid input data."
+                example: "Invalid email address."
     '401':
       description: Unauthorized - Invalid or missing credentials.
       content:

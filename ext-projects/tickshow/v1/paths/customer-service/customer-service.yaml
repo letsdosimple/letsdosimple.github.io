@@ -1,0 +1,44 @@
+get:
+  tags:
+    - customer-service
+  summary: Fetch customer service status
+  description: Retrieves the status of the customer service (online or offline).
+  operationId: customer-service
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Customer service status fetched successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "Otp sent to email"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+              customer_service_status:
+                type: string
+                enum: [online, offline]
+                description: Current status of customer service.
+                example: "online"
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

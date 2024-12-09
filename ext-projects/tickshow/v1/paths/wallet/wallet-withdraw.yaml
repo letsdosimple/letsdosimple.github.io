@@ -1,0 +1,53 @@
+post:
+  tags:
+    - wallet
+  summary: Withdraw from wallet
+  description: Initiates a withdrawal request from the user's wallet.
+  operationId: wallet-withdraw
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - amount
+          properties:
+            amount:
+              type: number
+              format: float
+              description: The amount to be withdrawn from the wallet.
+              example: 50.00
+  responses:
+    '200':
+      description: Withdraw request added successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "Amount withdraw request added successfully"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

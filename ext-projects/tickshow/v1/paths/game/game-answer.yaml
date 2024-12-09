@@ -1,0 +1,77 @@
+post:
+  tags:
+    - game
+  summary: Submit game answer
+  description: Submits the user's answer for a specific game question and returns whether the answer is correct.
+  operationId: game-answer
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - gameId
+            - gameQuestionId
+            - gameAnswerId
+          properties:
+            gameId:
+              type: integer
+              description: Unique identifier for the game.
+              example: 123
+            gameQuestionId:
+              type: integer
+              description: Unique identifier for the question in the game.
+              example: 456
+            gameAnswerId:
+              type: integer
+              description: Unique identifier for the selected answer.
+              example: 1
+  responses:
+    '200':
+      description: Answer submitted successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "Answer submitted"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+              correct_answer:
+                type: boolean
+                description: Indicates whether the submitted answer is correct.
+                example: true
+    '400':
+      description: Bad Request - Invalid input or missing data.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid game, question, or answer."
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

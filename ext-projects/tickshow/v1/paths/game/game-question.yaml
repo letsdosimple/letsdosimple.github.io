@@ -1,0 +1,84 @@
+get:
+  tags:
+    - game
+  summary: Fetch game question
+  description: Retrieves the current question for a specific game using its ID.
+  operationId: game-question
+  security:
+    - bearerAuth: []
+  parameters:
+    - name: gameId
+      in: path
+      required: true
+      description: Unique identifier for the game.
+      schema:
+        type: integer
+        example: 123
+  responses:
+    '200':
+      description: Question fetched successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "question fetched success"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+              question_id:
+                type: integer
+                description: Unique identifier for the question.
+                example: 456
+              question:
+                type: string
+                description: The game question text.
+                example: "What is the capital of France?"
+              question_count_down_seconds:
+                type: integer
+                description: Countdown time in seconds for answering the question.
+                example: 30
+              answers:
+                type: array
+                description: List of possible answers for the question.
+                items:
+                  type: object
+                  properties:
+                    answer_id:
+                      type: integer
+                      description: Unique identifier for the answer.
+                      example: 1
+                    answer:
+                      type: string
+                      description: Text of the answer.
+                      example: "Paris"
+    '404':
+      description: Game or question not found.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Question not found."
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

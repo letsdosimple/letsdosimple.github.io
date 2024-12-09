@@ -1,0 +1,77 @@
+get:
+  tags:
+    - customer-service
+  summary: Fetch customer service messages
+  description: Retrieves a list of messages exchanged with customer service, with pagination.
+  operationId: customer-service-messages
+  security:
+    - bearerAuth: []
+  parameters:
+    - name: pageNum
+      in: path
+      required: true
+      description: Page number for pagination.
+      schema:
+        type: integer
+        example: 1
+    - name: listPerPage
+      in: path
+      required: true
+      description: Number of messages to fetch per page.
+      schema:
+        type: integer
+        example: 10
+  responses:
+    '200':
+      description: Customer service messages fetched successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "customer-service-messages fetch success"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+              messages:
+                type: array
+                description: List of customer service messages.
+                items:
+                  type: object
+                  properties:
+                    profile_image:
+                      type: string
+                      description: URL of the user's profile image.
+                      example: "https://www.example.com/profile-pic.jpg"
+                    fullname:
+                      type: string
+                      description: Full name of the user who sent the message.
+                      example: "John Doe"
+                    message:
+                      type: string
+                      description: The content of the message.
+                      example: "I need help with my account."
+                    datetime:
+                      type: string
+                      format: date-time
+                      description: The date and time the message was sent.
+                      example: "2024-12-09T14:30:00Z"
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."

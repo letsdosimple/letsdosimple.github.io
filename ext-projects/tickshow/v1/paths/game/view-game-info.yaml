@@ -1,0 +1,84 @@
+get:
+  tags:
+    - game
+  summary: View game information
+  description: Fetches detailed information about a specific game using its ID.
+  operationId: view-game-info
+  security:
+    - bearerAuth: []
+  parameters:
+    - name: gameId
+      in: path
+      required: true
+      description: Unique identifier for the game.
+      schema:
+        type: integer
+        example: 123
+  responses:
+    '200':
+      description: Game information fetched successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Confirmation message.
+                example: "game info fetched success"
+              status:
+                type: string
+                description: Status of the request.
+                example: "success"
+              description:
+                type: string
+                description: Additional information.
+                example: "no errors"
+              attempt_count:
+                type: integer
+                description: Number of attempts made by the user.
+                example: 3
+              attempt_total_count:
+                type: integer
+                description: Total attempts allowed for the game.
+                example: 5
+              game_name:
+                type: string
+                description: Name of the game.
+                example: "Chess Blitz"
+              game_details:
+                type: string
+                description: Detailed information about the game.
+                example: "A fast-paced chess game with a 5-minute timer."
+              game_price:
+                type: number
+                format: float
+                description: Price of the game.
+                example: 10.50
+              game_status:
+                type: string
+                enum: [available, not available]
+                description: Availability status of the game.
+                example: "available"
+    '404':
+      description: Game not found.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Game not found."
+    '401':
+      description: Unauthorized - Invalid or missing token.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Error message.
+                example: "Invalid or missing authentication token."
