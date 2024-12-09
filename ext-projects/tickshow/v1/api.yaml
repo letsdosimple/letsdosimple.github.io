@@ -46,7 +46,7 @@ paths:
     $ref: './paths/game/game-answer.yaml'
   
   /leaderboard:
-    $ref: './paths/game/register.yaml'
+    $ref: './paths/game/leaderboard.yaml'
   
   /wallet:
     $ref: './paths/wallet/wallet.yaml'
