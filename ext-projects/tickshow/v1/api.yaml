@@ -3,10 +3,7 @@ info:
   title: TICKSOW
   description: |
     API for TICKSOW Quiz Project
-
-    **Basic Auth Credentials:**
-    - **Username:** badmin
-    - **Password:** bpass@213
+  
   version: 1.0.0
 
 servers:
