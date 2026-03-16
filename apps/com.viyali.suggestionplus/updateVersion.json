@@ -8,9 +8,9 @@
   },
   
   "maintenance": {
-  "enabled": false,
-  "start_time": "2026-03-09T14:20:27Z",
-  "end_time": "2026-03-09T14:30:27Z",
+  "enabled": true,
+   "start_time": "2026-03-09T14:20:27Z",
+  "end_time": "2026-03-09T14:25:27Z",
   "message": "Server upgrade in progress. Please come back later."
 }
 
