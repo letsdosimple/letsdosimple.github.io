@@ -13,6 +13,8 @@
     {
       "name": "Notes by Viyali",
       "package": "com.viyali.notes",
+      "android_url": "https://play.google.com/store/apps/details?id=com.viyali.notes",
+      "android_version": "2.0.0",
       "ios_url": "https://apps.apple.com/in/app/notes-by-viyali/id6759003337",
       "ios_version": "2026.03.31",
       "icon": "http://viyali.com/wp-content/uploads/2026/03/resed-logo.png"
@@ -29,14 +31,14 @@
       "package": "com.viyali.drinkwatertracker",
       "android_url": "https://play.google.com/store/apps/details?id=com.viyali.drinkwatertracker",
       "android_version": "0.1.1",
-      "icon": "https://yourcdn.com/icons/drink_water_tracker.png"
+      "icon": "https://play-lh.googleusercontent.com/JxVoTIWMGY3f7SXaI6eVdMJTwXbBge9AzOX1szSFPtVY-8hog99aRGgkc5oGjJtsAtRy_n-yboz0vy1eWBTa=w480-h960-rw"
     },
     {
       "name": "Web Traffic Bot",
       "package": "com.letsdosimple.WebTrafficBot",
       "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.WebTrafficBot",
       "android_version": "1.4.0+31",
-      "icon": "https://yourcdn.com/icons/web_traffic_bot.png"
+      "icon": "https://play-lh.googleusercontent.com/pifW0bvMDhnS_Gg-LxDCVNJrcF_6OSjciRzmVqfbMVsGr1jv5a0-Zo3f0m_5JWf7V4I=w480-h960-rw"
     },
     {
       "name": "Findy +",
@@ -50,7 +52,7 @@
       "package": "com.letsdosimple.NativeCricketScorebook",
       "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.NativeCricketScorebook",
       "android_version": "0.0.13",
-      "icon": "https://yourcdn.com/icons/native_cricket_scorebook.png"
+      "icon": "https://play-lh.googleusercontent.com/tEntR0gJekGWVQE6LPgud7GZwMCu6-rfllAes-Mf_BSy2WSLOXTWodN8BGkWt5g3SQ=w480-h960-rw"
     }
   ]
 }
