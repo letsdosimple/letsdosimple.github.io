@@ -8,7 +8,8 @@
       "android_version": "3.0.7",
       "ios_url": "https://apps.apple.com/in/app/my-today-lucky-number/id6748554246",
       "ios_version": "3.0.7",
-      "icon": "http://viyali.com/wp-content/uploads/2026/03/logo.png"
+      "icon": "http://viyali.com/wp-content/uploads/2026/03/logo.png",
+      "landing_url": "https://viyali.com/my-today-lucky-number/"
     },
     {
       "name": "Notes by Viyali",
@@ -17,42 +18,48 @@
       "android_version": "2.0.0",
       "ios_url": "https://apps.apple.com/in/app/notes-by-viyali/id6759003337",
       "ios_version": "2026.03.31",
-      "icon": "http://viyali.com/wp-content/uploads/2026/03/resed-logo.png"
+      "icon": "http://viyali.com/wp-content/uploads/2026/03/resed-logo.png",
+      "landing_url": "https://viyali.com/notes-by-viyali/"
     },
     {
       "name": "Suggestion Plus",
       "package": "com.letsdosimple.suggestionplus",
       "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.suggestionplus",
       "android_version": "0.2.5",
-        "icon": "https://yourcdn.com/icons/suggestion_plus.png"
-      },
+      "icon": "https://yourcdn.com/icons/suggestion_plus.png",
+      "landing_url": "https://suggestion.plus/"
+    },
     {
       "name": "Drink Water Tracker",
       "package": "com.viyali.drinkwatertracker",
       "android_url": "https://play.google.com/store/apps/details?id=com.viyali.drinkwatertracker",
       "android_version": "0.1.1",
-      "icon": "https://play-lh.googleusercontent.com/JxVoTIWMGY3f7SXaI6eVdMJTwXbBge9AzOX1szSFPtVY-8hog99aRGgkc5oGjJtsAtRy_n-yboz0vy1eWBTa=w480-h960-rw"
+      "icon": "https://play-lh.googleusercontent.com/JxVoTIWMGY3f7SXaI6eVdMJTwXbBge9AzOX1szSFPtVY-8hog99aRGgkc5oGjJtsAtRy_n-yboz0vy1eWBTa=w480-h960-rw",
+      "landing_url": "https://viyali.com/drink-water-tracker"
     },
     {
       "name": "Web Traffic Bot",
       "package": "com.letsdosimple.WebTrafficBot",
       "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.WebTrafficBot",
       "android_version": "1.4.0+31",
-      "icon": "https://play-lh.googleusercontent.com/pifW0bvMDhnS_Gg-LxDCVNJrcF_6OSjciRzmVqfbMVsGr1jv5a0-Zo3f0m_5JWf7V4I=w480-h960-rw"
+      "icon": "https://play-lh.googleusercontent.com/pifW0bvMDhnS_Gg-LxDCVNJrcF_6OSjciRzmVqfbMVsGr1jv5a0-Zo3f0m_5JWf7V4I=w480-h960-rw",
+      "landing_url": "https://viyali.com/web-traffic-bot"
     },
     {
       "name": "Findy +",
       "package": "com.letsdosimple.findyplus",
       "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.findyplus",
       "android_version": "1.1.1",
-      "icon": "http://viyali.com/wp-content/uploads/2026/03/Preview-3.png"
+      "icon": "http://viyali.com/wp-content/uploads/2026/03/Preview-3.png",
+      "landing_url": "https://findy.plus/"
     },
     {
       "name": "Native Cricket Scorebook",
       "package": "com.letsdosimple.NativeCricketScorebook",
       "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.NativeCricketScorebook",
       "android_version": "0.0.13",
-      "icon": "https://play-lh.googleusercontent.com/tEntR0gJekGWVQE6LPgud7GZwMCu6-rfllAes-Mf_BSy2WSLOXTWodN8BGkWt5g3SQ=w480-h960-rw"
+      "icon": "https://play-lh.googleusercontent.com/tEntR0gJekGWVQE6LPgud7GZwMCu6-rfllAes-Mf_BSy2WSLOXTWodN8BGkWt5g3SQ=w480-h960-rw",
+      "landing_url": "https://viyali.com/native-cricket-scorebook"
     }
   ]
 }
