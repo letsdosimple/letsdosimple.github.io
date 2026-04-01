@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "apps": [
+    {
+      "name": "My Today Lucky Number",
+      "package": "com.letsdosimple.mytodayluckynumber",
+      "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.mytodayluckynumber",
+      "ios_url": "https://apps.apple.com/in/app/my-today-lucky-number/id6748554246"
+    },
+    {
+      "name": "Notes by Viyali",
+      "package": "com.viyali.notes",
+      "ios_url": "https://apps.apple.com/in/app/notes-by-viyali/id6759003337"
+    },
+    {
+      "name": "Suggestion Plus",
+      "package": "com.letsdosimple.suggestionplus",
+      "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.suggestionplus"
+    },
+    {
+      "name": "Drink Water Tracker",
+      "package": "com.viyali.drinkwatertracker",
+      "android_url": "https://play.google.com/store/apps/details?id=com.viyali.drinkwatertracker"
+    },
+    {
+      "name": "Web Traffic Bot",
+      "package": "com.letsdosimple.WebTrafficBot",
+      "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.WebTrafficBot"
+    },
+    {
+      "name": "Findy Plus",
+      "package": "com.letsdosimple.findyplus",
+      "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.findyplus"
+    },
+    {
+      "name": "Native Cricket Scorebook",
+      "package": "com.letsdosimple.NativeCricketScorebook",
+      "android_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.NativeCricketScorebook"
+    }
+  ]
+}
