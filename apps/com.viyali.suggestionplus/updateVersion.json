@@ -7,7 +7,7 @@
     "release_notes": "Minor bug fixes and performance improvements."
   },
   "maintenance": {
-    "enabled": false,
+    "enabled": true,
    "start_time": "2026-04-07T15:42:00Z",
     "end_time": "2026-04-07T16:42:00Z",
     "message": "Server upgrade in progress. Please come back later."
