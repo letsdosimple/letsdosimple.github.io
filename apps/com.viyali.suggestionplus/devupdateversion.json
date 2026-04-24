@@ -1,0 +1,15 @@
+{
+  "status": 200,
+  "app": {
+    "latest_version": "0.1.0",
+    "force_update": true,
+    "update_url": "https://play.google.com/store/apps/details?id=com.letsdosimple.suggestionplus",
+    "release_notes": "Minor bug fixes and performance improvements."
+  },
+  "maintenance": {
+    "enabled": false,
+    "start_time": "2026-04-17T07:48:00Z",
+    "end_time": "2026-04-17T13:48:00Z",
+    "message": "Server upgrade in progress. Please come back later."
+  }
+}
