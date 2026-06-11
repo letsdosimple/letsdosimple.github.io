@@ -34,7 +34,7 @@
       "android_version": "0.2.9",
       "icon": "https://yourcdn.com/icons/suggestion_plus.png",
       "landing_url": "https://suggestion.plus/",
-      "maintainence":false,
+      "maintainence":true,
       "android_force_update":true,
       "ios_force_update":false
     },
